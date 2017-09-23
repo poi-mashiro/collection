@@ -45,8 +45,8 @@ vscode-fileheader -- mikey
     "comments": false,
     "strings": true
   },
-  "fileheader.Author": "poi-mashiro",
-  "fileheader.LastModifiedBy": "poi-mashiro",
+  "fileheader.Author": "",
+  "fileheader.LastModifiedBy": "",
   "eslint.autoFixOnSave": true,
   "eslint.options": {
     "extensions": [
