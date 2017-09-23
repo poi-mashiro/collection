@@ -31,3 +31,6 @@ https://www.nativescript.org/
 
 #### prettier
 https://github.com/prettier/prettier
+
+#### babel notice
+https://github.com/babel/babel/blob/master/packages/babel-plugin-transform-runtime/src/definitions.js
