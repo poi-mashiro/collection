@@ -1,6 +1,7 @@
 <center><h2>vs code plugin list and setting</h2></center>
 
 ### color themes
+#### none can satisfy me, I decide to write one for myself one day
 Atom One Dark Theme -- Mahmoud Ali  
 Cobalt2 Theme Official -- Wes Bos  
 Darcula Theme -- rokoroku  
