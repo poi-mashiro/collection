@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .overflow-box {
+      width: 375px;
+      height: 200px;
+      /* overflow: hidden; */
+      margin: 400px auto 0;
+    }
+
+    .box {
+      width: 375px;
+      height: 200px;
+      perspective: 1000px;
+      white-space: nowrap;
+      transform-style: preserve-3d;
+      position: relative;
+      transform: rotateX(-40deg);
+    }
+
+    .box div {
+      width: 320px;
+      height: 200px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -160px;
+      margin-top: -100px;
+      transition: transform 0.5s;
+      transform: translate3d(0, 0, -500px);
+    }
+
+    .box div:nth-of-type(6n+1) {
+      background: #f00;
+    }
+
+    .box div:nth-of-type(6n+2) {
+      background: #ff0;
+    }
+
+    .box div:nth-of-type(6n+3) {
+      background: #f0f;
+    }
+
+    .box div:nth-of-type(6n+4) {
+      background: #0f0;
+    }
+
+    .box div:nth-of-type(6n+5) {
+      background: #0ff;
+    }
+
+    .box div:nth-of-type(6n) {
+      background: #00f;
+    }
+
+    .noselect {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 如果在pc使用 
+    如果需要只显示 限定数量 
+    打开 overflow-box的 overflow: hidden  
+    if use in pc website
+    if only show several
+    active class='overflow-box' -> overflow: hidden  
+    移动端 
+    调整js中的 translate3d 的 x 的间距
+    使用 overflow-box的 overflow: hidden 避免页面横向滚动
+    if use in mobile 
+    adjust translate3d('value', 0 , 'value')
+    user class='overflow-box' -> overflow: hidden or overflow-x: hidden to avoid scroll-x
+  -->
+  <div class="overflow-box">
+    <!-- 实际使用请关闭 box 的 transform: rotateX(-40deg);
+    不要试图给 box 添加 overflow: hidden 会导致 3d 失效
+    when using , set class='box' -> transform: rotateX(0);
+    don't set class='box' -> overflow: hidden , it will make 3d to 2d
+    -->
+    <div class="box noselect">
+      <!-- 轮播实际内容 丢在div中即可 -->
+      <div class="pic">1</div>
+      <div class="pic">2</div>
+      <div class="pic">3</div>
+      <div class="pic">4</div>
+      <div class="pic">5</div>
+      <div class="pic">6</div>
+      <div class="pic">7</div>
+      <div class="pic">8</div>
+      <div class="pic">9</div>
+      <div class="pic">10</div>
+      <div class="pic">11</div>
+      <div class="pic">12</div>
+    </div>
+  </div>
+  <script>
+    let lunboList = document.getElementsByClassName('pic')
+    let current = 0
+    let len = lunboList.length
+    let timer = null
+
+    const setPosition = (current, len, lunboList) => {
+      // console.log('')
+      for (let i = 1; i < len / 2; i++) {
+        if (current + i < len) {
+          lunboList[current + i].style = `transform: translate3d(${46 * i}px, 0, ${-Math.abs(i * 100)}px);`
+          // console.log(current + i)
+        } else {
+          lunboList[current + i - len].style = `transform: translate3d(${46 * i}px, 0, ${-Math.abs(i * 100)}px);`
+          // console.log(current + i - len)
+        }
+        if (current - i < 0) {
+          lunboList[len + current - i].style = `transform: translate3d(${46 * -i}px, 0, ${-Math.abs(-i * 100)}px);`
+          // console.log(len + current - i)
+        } else {
+          lunboList[current - i].style = `transform: translate3d(${46 * -i}px, 0, ${-Math.abs(-i * 100)}px);`
+          // console.log(current - i)
+        }
+      }
+      // console.log(current)
+      lunboList[current].style = 'transform: translate3d(0, 0, 0);'
+      if ((current + len / 2 < len) && len % 2 === 0) {
+        lunboList[current + len / 2].style = `transform: translate3d(${46 * len / 2}px, 0, ${-Math.abs(len / 2 * 100)}px);`
+      } else if (len % 2 === 0) {
+        lunboList[current + len / 2 - len].style = `transform: translate3d(${46 * len / 2}px, 0, ${-Math.abs(len / 2 * 100)}px);`
+      }
+    }
+    const move = () => {
+      timer = setInterval(() => {
+        current++
+        current === len ? current = 0 : ''
+        setPosition(current, len, lunboList)
+      }, 2000)
+      return timer
+    }
+    const lunbo = () => {
+      if (len < 1) {
+        return
+      }
+      setPosition(current, len, lunboList)
+      move()
+      document.getElementsByClassName('box')[0].onmousedown = function (e) {
+        // console.log(e)
+        clearInterval(timer)
+        let startX = e.offsetX || e.pageX || e.screenX
+        document.getElementsByClassName('box')[0].onmousemove = function (e) {
+          let nowX = e.offsetX || e.pageX || e.screenX
+          // 手机左滑 touch to left
+          if (nowX - startX >= 50) {
+            console.log()
+            current--
+            current === -1 ? current = len - 1 : ''
+            setPosition(current, len, lunboList)
+            move()
+            document.getElementsByClassName('box')[0].onmousemove = null
+          } else if (startX - nowX >= 50) {
+            // 手机右滑 touchi to right
+            current++
+            current === len ? current = 0 : ''
+            setPosition(current, len, lunboList)
+            move()
+            document.getElementsByClassName('box')[0].onmousemove = null
+          }
+        }
+        document.getElementsByClassName('box')[0].onmouseup = function (e) {
+          document.getElementsByClassName('box')[0].onmousemove = null
+          let endX = e.offsetX || e.pageX || e.screenX
+          if (Math.abs(startX - endX) < 50) {
+            move()
+          }
+        }
+      }
+    }
+    lunbo()
+  </script>
+</body>
+
+</html>
