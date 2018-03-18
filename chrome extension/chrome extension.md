@@ -4,3 +4,5 @@
 * Markdown Viewer
 * Fehelper
 * adb
+* postman
+* Proxy SwitchyOmega
