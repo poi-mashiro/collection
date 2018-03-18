@@ -1,28 +1,26 @@
 <center><h2>vs code plugin list and setting</h2></center>
 
 ### color themes
-#### none can satisfy me, I decide to write one for myself one day
-Atom One Dark Theme -- Mahmoud Ali  
-Cobalt2 Theme Official -- Wes Bos  
-Darcula Theme -- rokoroku  
-Flatland Monokai Theme -- gerane  
-Hackers Haze Theme -- Nuuf  
-JetJet-theme -- Jhony Georges  
-Material Neutral Theme -- bernardodsanderson  
-Meterial Palenight Theme -- whizkydee  
+Atom One Dark Theme -- Mahmoud Ali
 
 ### editor Extended
-Beautify css/sass/css/less -- michelemelluso  
 Color Highlight -- Sergii Naumov  
 filesize -- Matheus Kautzmann  
+open HTML in Default Browser -- peakchen90
+live server -- Ritwick Dey
+code runner -- Jun Han
 
 ### coding
 auto Rename Tag -- Jun Han  
-Beautify -- HookyQR (wait for a try)  
 ESLint -- Dirk Baeumer  
+prettier - code formatter -- christian kohler  
 language-stylus -- sysoev  
 Path Intellisense -- Christian Kohler
 Vetur -- Pine Wu  
+vue 2 snippets -- hollowtree
+weex -- JaylinWang
+vscode wxml -- coderfee
+vscode wweapp api -- coderfee
 
 ### debug
 debugger for Chrome -- Microsoft  
@@ -46,8 +44,9 @@ vscode-fileheader -- mikey
     "comments": false,
     "strings": true
   },
-  "fileheader.Author": "",
-  "fileheader.LastModifiedBy": "",
+  "fileheader.Author": "poi-mashiro",
+  "fileheader.LastModifiedBy": "poi-mashiro",
+  "fileheader.tpl": "/*\r\n * @Author: {author} \r\n * @Date: {createTime} \r\n * @Last Modified by:   {lastModifiedBy} \r\n * @Last Modified time: {updateTime} \r\n */\r\n",
   "eslint.autoFixOnSave": true,
   "eslint.options": {
     "extensions": [
@@ -67,9 +66,8 @@ vscode-fileheader -- mikey
     "vue-html": "html"
   },
   "editor.tabSize": 2,
-  "window.zoomLevel": 0,
-  "fileheader.tpl": "/*\r\n * @Author: {author} \r\n * @Date: {createTime} \r\n * @Last Modified by:   {lastModifiedBy} \r\n * @Last Modified time: {updateTime} \r\n */\r\n",
   "git.enabled": false,
   "beautify.tabSize": 2,
-  "workbench.colorTheme": "Red"
+  "workbench.colorTheme": "Atom One Dark",
+  "prettier.singleQuote": true
 }</code></pre>
