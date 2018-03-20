@@ -69,5 +69,8 @@ vscode-fileheader -- mikey
   "git.enabled": false,
   "beautify.tabSize": 2,
   "workbench.colorTheme": "Atom One Dark",
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "stylusSupremacy.insertBraces": false,
+  "stylusSupremacy.insertColons": false,
+  "stylusSupremacy.insertSemicolons": false
 }</code></pre>
