@@ -130,7 +130,6 @@ new Vue({
   <select class="control" name="" id="" @change="switchLang()" ref="tagSelect">
     <option value="en" :selected=" locale === 'en' ">EN</option>
     <option value="zh" :selected=" locale === 'zh' ">中文</option>
-    <option value="jp" :selected=" locale === 'jp' ">日本語</option>
   </select>
 ```
 ```
