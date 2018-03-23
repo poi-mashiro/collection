@@ -17,8 +17,8 @@ i18n
 ----en  
 ------index.js  
 ------faq.html  
---index.js
-例 faq.html  
+--index.js  
+例 faq.html  
 ```
 <!-- zh -->
 <h1>基础</h1>
@@ -133,11 +133,13 @@ new Vue({
   </select>
 ```
 ```
-  computed: {
-    ...mapState(['locale'])
-  },
+  data() {
+    return {
+      locale: 'en'
+    }
+  }
   created() {
-    this.setLocale(this.$i18n.locale)
+    this.locale = this.$i18n.locale;
   },
   methods: {
     // 切换语言，设置值
@@ -147,11 +149,9 @@ new Vue({
       // let text = this.$refs.tagSelect.options[index].text;
       localStorage.setItem('language', value)
       this.$i18n.locale = value
-      this.setLocale(value); // 不确定是否要更改vuex才可以影响全局，反正多写也没几行
+      this.locale = value
       // console.log(index, value, text);
-    },
-    ...mapMutations(['setLocale'])
-    //  也可以用actions的方法更新
+    }
   }
 ```
 大块的html 模板的使用
