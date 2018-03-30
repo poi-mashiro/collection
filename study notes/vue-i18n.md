@@ -1,7 +1,7 @@
 # vue-i18n 简单使用介绍
 
 #### 安装
-npm i vue-i18n -S
+npm i vue-i18n -S  
 npm i raw-loader --save-dev（用于将html 转成字符串）
 
 #### 使用
@@ -154,14 +154,19 @@ new Vue({
     }
   }
 ```
+变量和对象嵌套使用
+```
+<img :src="$t('cardConfig.'+ item.id +'.url')">
+```
 大块的html 模板的使用
 ```
 <template> // template 非必须，我是用的单独的 faq.vue 文件所以这样
-  <div class="common privacy" v-html="$t('FAQs_CONTENT')">
+  <div class="common privacy" v-html="$t('Privacy_CONTENT')">
   </div>
 </template>
 ```
 
 ###### 5 其他
-核心用法就是 {{ $t('字段名') }}， 带变量的用法还没实际用到  
-没有大段的html使用需求，也可以使用 json 文件存储语言对应的文字
+核心用法就是 {{ $t('字段名') }}
+没有大段的html使用需求，也可以使用 json 文件存储语言对应的文字  
+v-t 指令可以写在标签上来使用i18，性能更好，但$t 更灵活，在js 中也可以使用$t 来进行i18版的信息提示
