@@ -158,6 +158,12 @@ new Vue({
 ```
 <img :src="$t('cardConfig.'+ item.id +'.url')">
 ```
+带参数模板的使用
+```
+例如 模板  TIME: '{time}（{days} 天 {hours} 小时 {minutes} 分钟 {seconds}秒'
+
+使用方法为  $t('TIME', { time: 传入变量, days: 传入变量, hours: 传入变量, minutes: 传入变量, seconds: 传入变量 })
+```
 大块的html 模板的使用
 ```
 <template> // template 非必须，我是用的单独的 faq.vue 文件所以这样
