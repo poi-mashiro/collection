@@ -85,9 +85,7 @@
   "stylusSupremacy.insertBraces": false,
   "stylusSupremacy.insertColons": false,
   "stylusSupremacy.insertSemicolons": false,
-  "liveServer.settings.mount": [
-    ["/guoxinyu", "./"]
-  ],
+  "liveServer.settings.mount": [],
   "window.zoomLevel": 0,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "prettier.eslintIntegration": false,
