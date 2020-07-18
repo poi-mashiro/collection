@@ -15,14 +15,6 @@ http://www.hewebgl.com/article/articledir/1
 #### vue
 https://www.awesomes.cn/subject/vue#应用-框架
 
-https://github.com/baianat/vee-validate
-
-https://github.com/Plortinus/vue-multiple-pages (pc)  
-
-https://github.com/bluefox1688/vue-cli-multi-page (mobile)
-
-https://zh.nuxtjs.org/guide
-
 #### weex
 http://weex.apache.org/cn/
 
