@@ -20,7 +20,6 @@ code --install-extension hbenl.vscode-test-explorer
 code --install-extension hollowtree.vue-snippets
 code --install-extension infeng.vscode-react-typescript
 code --install-extension kumar-harsh.graphql-for-vscode
-code --install-extension mariorodeghiero.vue-theme
 code --install-extension mikestead.dotenv
 code --install-extension mikey.vscode-fileheader
 code --install-extension mkxml.vscode-filesize
