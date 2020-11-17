@@ -47,6 +47,8 @@ code --install-extension wix.vscode-import-cost
 ```
 ```json
 {
+  "editor.fontFamily": "Cascadia Code, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.fontSize": 12,
   "editor.wordWrap": "on",
@@ -100,9 +102,9 @@ code --install-extension wix.vscode-import-cost
   },
   "git.path": "D:\\Git\\bin\\git.exe",
   "todo-tree.tree.showScanModeButton": false,
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  },
+  "workbench.colorTheme": "Tomorrow Night Blue",
 }
 ```
