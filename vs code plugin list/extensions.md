@@ -1,6 +1,5 @@
 code --list-extensions | xargs -L 1 echo code --install-extension
 ```bash
-code --install-extension akamud.vscode-theme-onedark
 code --install-extension Angular.ng-template
 code --install-extension christian-kohler.npm-intellisense
 code --install-extension christian-kohler.path-intellisense
