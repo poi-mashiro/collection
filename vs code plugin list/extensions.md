@@ -1,4 +1,7 @@
+#### mac
 code --list-extensions | xargs -L 1 echo code --install-extension
+#### win
+code --list-extensions | % { "code --install-extension $_" }
 ```bash
 code --install-extension Angular.ng-template
 code --install-extension christian-kohler.npm-intellisense
